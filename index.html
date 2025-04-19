@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <form class="w-50 bg-warning p-3" action="try.php" method="post" onsubmit="return validate()">
+            <h3 class="text-center">signup here....</h3>
+            <input required type="text" placeholder="username" class="form-control mt-3" name="username">
+            <input id="pass1" required type="password" placeholder="password" minlength="4" maxlength="10"
+                class="form-control mt-3" name="password">
+            <input id="pass2" type="password" placeholder="confirm password" minlength="4" maxlength="10"
+                class="form-control mt-2" name="confirm_password">
+            <input type="text" placeholder="mobile number" minlength="10" maxlength="10" class="form-control mt-3" name="mobile_number">
+
+            <label class="mt-2 mr-2" for="">Select user type</label>
+                <select class="form-control" name="usertype">
+                    <option value="jaipur">jaipur</option>
+                    <option value="jodhpur">jodhpur</option>
+                    <option value="kota">kota</option>
+                    <option value="kaurali">kaurali</option>
+                    <option value="gangapur">gangapur</option>
+                    <option value="dausa">dausa</option>
+                    <option value="hindon">hindon</option>
+                    <option value="udaipur">udaipur</option>
+                </select>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-danger">signup</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script>
+       var pass1obj=document.getElementById("pass1");
+       var pass2obj=document.getElementById("pass2");
+        function validate() {
+            if (pass1obj.value == pass2obj.value) {
+                return true;
+            }
+            else {
+                alert("password error");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
